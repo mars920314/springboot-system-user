@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>登录 | SpringForAll - Spring Security</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+</head>
+    <body>
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="/">首页</a>
+                </li>
+            </ul>
+            <div class="navbar-form navbar-right">
+                <a class="btn btn-danger" th:href="@{/user}" th:if="${#httpServletRequest.remoteUser}">个人中心</a>
+                <a class="btn btn-info" th:href="@{/register}" th:unless="${#httpServletRequest.remoteUser}">注册</a>
+                <a class="btn btn-success" th:href="@{/login}" th:unless="${#httpServletRequest.remoteUser}">登录</a>
+            </div>
+            <div class="welcome">
+		        <h1>Welcome!</h1>
+		
+		        <p>Click <a th:href="@{/user}">here</a> to see a greeting.</p>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mars.springboot.orm.mapper.LocalhostMapper">
+
+    <select id="getUser" resultType="mars.springboot.orm.model.User">
+    	select id, nickname, password, username from user 
+    	where username=#{username}
+    </select>
+    
+    <insert id="insertUser" parameterType="mars.springboot.orm.model.User">
+        insert into user (nickname, password, username)
+        values
+        (#{item.nickname},#{item.username},#{item.password})
+        on duplicate key update
+        nickname=values(nickname),username=values(username),password=values(password)
+    </insert>
+
+    <update id="updateUserByUsername">
+    	update user set nickname=#{nickname} and password=#{password} where username=#{username}
+    	<set>
+    		1=1
+    		<if test="nickname!=null">and nickname=#{nickname}</if>
+    		<if test="password!=null">and password=#{password}</if>
+    	</set>
+    	where username=#{username}
+    </update>
+</mapper>

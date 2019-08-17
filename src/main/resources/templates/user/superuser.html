@@ -1,0 +1,25 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>登录 | SpringForAll - Spring Security</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+</head>
+
+<body style="background-color: #f1f1f1; padding-bottom: 0">
+
+	<div class="container" style="margin-top: 60px">
+	
+	    <div style="text-align: center; margin-top: 10%">
+	    	<h1>Super User</h1>
+	        <p th:text="${username}" style="margin-top: 25px; font-size: 20; color: crimson">Anoy</p>
+	        <form th:action="@{/user}" method="get">
+	            <button class="btn btn-danger" style="margin-top: 20px">返回用户中心</button>
+	        </form>
+	    </div>
+	
+	</div>
+
+</body>
+
+</html>
