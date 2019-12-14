@@ -17,7 +17,7 @@ import mars.springboot.orm.model.User;
 
 @Service
 @Primary
-public class BaseUserDaoService implements UserDaoService {
+public class UserDaoServiceBaseImpl implements UserDaoService {
 
     private final static Map<Integer, String> ENCODER_TYPE = new HashMap<>();
 
@@ -26,7 +26,7 @@ public class BaseUserDaoService implements UserDaoService {
 	private final LocalhostMapper localhostMapper;
 
 
-    public BaseUserDaoService(LocalhostMapper localhostMapper) {
+    public UserDaoServiceBaseImpl(LocalhostMapper localhostMapper) {
         this.localhostMapper = localhostMapper;
     }
 

@@ -39,16 +39,13 @@
 		<!-- config -->
 		<fileSet>
 			<directory>etc</directory>
-			<excludes>
-				<exclude>nlp/</exclude>
-			</excludes>
 			<outputDirectory>etc</outputDirectory>
 		</fileSet>
 
-		<!-- webapp -->
+		<!-- resources -->
 		<fileSet>
-			<directory>src/main/webapp</directory>
-			<outputDirectory>web</outputDirectory>
+			<directory>src/main/resources</directory>
+			<outputDirectory>etc</outputDirectory>
 		</fileSet>
 
 		<!-- shell -->

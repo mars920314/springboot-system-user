@@ -70,7 +70,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			// 配置路径拦截，表明路径访问所对应的权限，角色，认证信息。所有请求都得经过认证和授权。
 			.authorizeRequests()
 				// 匹配"/"等路径，不需要权限即可访问
-                .antMatchers("/", "/home", "/register", "/login", "/iplogin").permitAll()
+                .antMatchers("/", "/home", "/register", "/login", "/iplogin", "/heartbeat").permitAll()
                 // 设置访问权限，匹配"/user"及其以下所有路径，都需要"USER"权限，默认前面加了ROLE_
                 .antMatchers("/user/**").hasAnyAuthority("USER", "ADMIN")
 //                .antMatchers("/super").hasAuthority("ADMIN")
